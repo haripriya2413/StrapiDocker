@@ -15,6 +15,13 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_wrapper: false
+
+      - name: Create SSH Key File
+        run: |
+          mkdir -p /home/runner/.ssh
+          echo "${{ secrets.HARIPRIYA_EC2_KEY }}" > /home/runner/.ssh/devops.pem
+          chmod 600 /home/runner/.ssh/devops.pem
+          ls -al /home/runner/.ssh  # Verify permissions and existence
           
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
