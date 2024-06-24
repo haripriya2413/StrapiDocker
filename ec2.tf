@@ -75,6 +75,3 @@ resource "aws_instance" "strapi" {
   }
 }
 
-output "instance_ip" {
-  value = aws_instance.strapi.public_ip
-}
