@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14-alpine
+FROM node:18-alpine
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -11,7 +11,7 @@ RUN npm install -g strapi@latest
 RUN strapi new my-strapi-app --quickstart --no-run
 
 # Set the working directory to the Strapi project
-WORKDIR /usr/src/app/my-strapi-app
+WORKDIR /usr/src/app/priya-strapi-app
 
 # Expose the Strapi default port
 EXPOSE 1337
