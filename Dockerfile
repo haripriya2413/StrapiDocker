@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 RUN npm install -g strapi@latest
 
 # Create a new Strapi project
-RUN strapi new my-strapi-app --quickstart --no-run
+RUN strapi new priya-strapi-app --quickstart --no-run
 
 # Set the working directory to the Strapi project
 WORKDIR /usr/src/app/priya-strapi-app
