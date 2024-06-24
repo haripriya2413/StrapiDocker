@@ -3,7 +3,7 @@ name: build-and-push
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t priya247/strapidocker:latest .
+        run: docker build -t priya247/strapidockerimage:latest .
 
       - name: Log in to DockerHub
         uses: docker/login-action@v1
@@ -22,4 +22,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push Docker image to DockerHub
-        run: docker push priya247/strapidocker:latest
+        run: docker push priya247/strapidockerimage:latest
